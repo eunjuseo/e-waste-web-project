@@ -1,32 +1,37 @@
-.feed__status {
-    width: 90%;
-    margin: 1rem auto;
-  }
-  
-  .feed__status form {
-    display: flex;
+
+.ewaste_counter{
+    align-items: left;
+}
+.progress__head{
     align-items: center;
-  }
-  
-  .feed__status form * {
-    margin: 0 0.5rem;
-  }
-  
-  .feed__control {
+    padding-left: 42%;
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: #182b10;
+}
+
+.progress__explanation{
     text-align: center;
-  }
-  
-  .new-post__preview-image {
-    width: 15rem;
-    height: 7rem;
-  }
-  .ewaste_counter{
-    align-items: center;
-  }
-  
-  @media (min-width: 768px) {
+    padding-left: 3%;
+}
+.progress__explanation_a{
+    text-align: center;
+    padding-left: 2%;
+}
+iframe{
+    display: block;
+    margin: 0 auto;
+}
+
+
+p {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.
+@media (min-width: 768px) {
     .feed__status {
-      width: 30rem;
-    }
-  }
-  
+        width: 30rem;
+    }   
+}

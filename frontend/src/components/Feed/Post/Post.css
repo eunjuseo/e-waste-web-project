@@ -19,6 +19,9 @@
 
 .post__content {
   font-size: 1.5rem;
+  text-align: justify;
+  margin : 4rem 8rem 4rem 8rem;
+  line-height: 3rem;
 }
 
 .post__image {

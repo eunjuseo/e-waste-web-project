@@ -22,9 +22,22 @@
 }
 .ewaste_counter{
   align-items: center;
+  
 }
 .background__image{
   background-image: url(./images/clear-light-bulb-planter-on-gray-rock.jpg);
+}
+
+.feed__title{
+  align-items: center;
+  padding-left: 30%;
+  font-size: 2rem;
+  color: #182b10;
+}
+.feed__video_title{
+  font-size: 3rem;
+  margin: 0rem 0rem 6rem 2rem;
+  color: #182b10;
 }
 @media (min-width: 768px) {
   .feed__status {

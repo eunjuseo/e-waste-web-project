@@ -10,7 +10,7 @@ import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 import './Feed.css';
 import Parser from 'html-react-parser';
 const ewaste_counter = '<iframe align="right" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/18?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>';
-const ewaste_income = '<iframe align="bottom" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/38?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>'
+const ewaste_income = '<iframe align="left" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/38?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>'
 class Feed extends Component {
   state = {
     isEditing: false,
@@ -236,6 +236,9 @@ class Feed extends Component {
             New Post
           </Button>
         </section> */}
+        <div className="feed__title">
+          <h1>Electronic Waste</h1>
+        </div>
         <section className="feed">
           {this.state.postsLoading && (
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
@@ -268,6 +271,8 @@ class Feed extends Component {
             </Paginator>
           )}
         </section>
+        <h1 className="feed__video_title">E-Waste in Ghana</h1>
+        <iframe width="900" height="700" src="https://www.youtube.com/embed/pr1zQrXM_7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </Fragment>
     );
   }
