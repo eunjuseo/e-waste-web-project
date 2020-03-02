@@ -1,5 +1,6 @@
 .navigation-item {
   padding: 0 1.5rem;
+  font-size: 1.25rem;
 }
 
 .navigation-item a {
@@ -13,7 +14,7 @@
 }
 
 .navigation-item.mobile a {
-  color: #3b0062;
+  color: #182b10;
 }
 
 .navigation-item a:hover,

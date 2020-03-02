@@ -5,8 +5,8 @@ import './NavigationItems.css';
 
 const navItems = [
   { id: 'feed', text: 'E-waste', link: '/', auth: true },
-  { id: 'login', text: 'Login', link: '/', auth: false },
-  { id: 'signup', text: 'Signup', link: '/signup', auth: false }
+  { id: 'login', text: 'Progress', link: '/progress', auth: true },
+  // { id: 'signup', text: 'Signup', link: '/signup', auth: false }
 ];
 
 const navigationItems = props => [
@@ -19,12 +19,12 @@ const navigationItems = props => [
         {item.text}
       </NavLink>
     </li>
-  )),
-  props.isAuth && (
-    <li className="navigation-item" key="logout">
-      <button onClick={props.onLogout}>Logout</button>
-    </li>
-  )
+  ))//,
+  // props.isAuth && (
+  //   <li className="navigation-item" key="logout">
+  //     <button onClick={props.onLogout}>Logout</button>
+  //   </li>
+  // )
 ];
 
 export default navigationItems;

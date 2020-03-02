@@ -8,6 +8,7 @@ import MainNavigation from './components/Navigation/MainNavigation/MainNavigatio
 import MobileNavigation from './components/Navigation/MobileNavigation/MobileNavigation';
 import ErrorHandler from './components/ErrorHandler/ErrorHandler';
 import FeedPage from './pages/Feed/Feed';
+import ProgressPage from './pages/Progress-video/Progress-video';
 import SinglePostPage from './pages/Feed/SinglePost/SinglePost';
 import LoginPage from './pages/Auth/Login';
 import SignupPage from './pages/Auth/Signup';
@@ -152,6 +153,7 @@ class App extends Component {
             />
           )}
         />
+       
         <Route
           path="/signup"
           exact
@@ -176,7 +178,8 @@ class App extends Component {
               <FeedPage userId={this.state.userId} token={this.state.token} />
             )}
           />
-          <Route
+           
+          {/* <Route
             path="/:postId"
             render={props => (
               <SinglePostPage
@@ -184,6 +187,13 @@ class App extends Component {
                 userId={this.state.userId}
                 token={this.state.token}
               />
+            )}
+          /> */}
+          <Route
+            path="/progress"
+            exact
+            render={props=>(
+              <ProgressPage userId={this.state.userId} token={this.state.token}/>
             )}
           />
           <Redirect to="/" />

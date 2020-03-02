@@ -1,0 +1,231 @@
+import React, { Component, Fragment } from 'react';
+
+import Post from '../../components/Feed/Post/Post';
+import Button from '../../components/Button/Button';
+import FeedEdit from '../../components/Feed/FeedEdit/FeedEdit';
+import Input from '../../components/Form/Input/Input';
+import Paginator from '../../components/Paginator/Paginator';
+import Loader from '../../components/Loader/Loader';
+import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
+import './Progress-video.css';
+import Parser from 'html-react-parser';
+const ewaste_counter = '<iframe align="right" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/18?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>';
+const ewaste_income = '<iframe align="bottom" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/38?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>'
+class Progressvideo extends Component {
+  state = {
+    isEditing: false,
+    posts: [],
+    totalPosts: 0,
+    editPost: null,
+    status: '',
+    postPage: 1,
+    postsLoading: true,
+    editLoading: false
+  };
+
+//   componentDidMount() {
+//     // fetch('URL')
+//     //   .then(res => {
+//     //     if (res.status !== 200) {
+//     //       throw new Error('Failed to fetch user status.');
+//     //     }
+//     //     return res.json();
+//     //   })
+//     //   .then(resData => {
+//     //     this.setState({ status: resData.status });
+//     //   })
+//     //   .catch(this.catchError);
+
+//     this.loadPosts();
+//   }
+
+//   loadPosts = direction => {
+//     if (direction) {
+//       this.setState({ postsLoading: true, posts: [] });
+//     }
+//     let page = this.state.postPage;
+//     if (direction === 'next') {
+//       page++;
+//       this.setState({ postPage: page });
+//     }
+//     if (direction === 'previous') {
+//       page--;
+//       this.setState({ postPage: page });
+//     }
+//     fetch('http://localhost:8080/feed/posts')
+//       .then(res => {
+//         if (res.status !== 200) {
+//           throw new Error('Failed to fetch posts.');
+//         }
+//         return res.json();
+//       })
+//       .then(resData => {
+//         this.setState({
+//           posts: resData.posts,
+//           totalPosts: resData.totalItems,
+//           postsLoading: false
+//         });
+//       })
+//       .catch(this.catchError);
+//   };
+
+  // statusUpdateHandler = event => {
+  //   event.preventDefault();
+  //   fetch('URL')
+  //     .then(res => {
+  //       if (res.status !== 200 && res.status !== 201) {
+  //         throw new Error("Can't update status!");
+  //       }
+  //       return res.json();
+  //     })
+  //     .then(resData => {
+  //       console.log(resData);
+  //     })
+  //     .catch(this.catchError);
+  // };
+
+//   newPostHandler = () => {
+//     this.setState({ isEditing: true });
+//   };
+
+//   startEditPostHandler = postId => {
+//     this.setState(prevState => {
+//       const loadedPost = { ...prevState.posts.find(p => p._id === postId) };
+
+//       return {
+//         isEditing: true,
+//         editPost: loadedPost
+//       };
+//     });
+//   };
+
+//   cancelEditHandler = () => {
+//     this.setState({ isEditing: false, editPost: null });
+//   };
+
+//   finishEditHandler = postData => {
+//     this.setState({
+//       editLoading: true
+//     });
+//     // Set up data (with image!)
+//     let url = 'http://localhost:8080/feed/post';
+//     let method = 'POST';
+//     if (this.state.editPost) {
+//       url = 'URL';
+//     }
+
+//     fetch(url, {
+//       method: method,
+//       headers: {
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({
+//         title: postData.title,
+//         content: postData.content
+//       })
+//     })
+//       .then(res => {
+//         if (res.status !== 200 && res.status !== 201) {
+//           throw new Error('Creating or editing a post failed!');
+//         }
+//         return res.json();
+//       })
+//       .then(resData => {
+//         console.log(resData);
+//         const post = {
+//           _id: resData.post._id,
+//           title: resData.post.title,
+//           content: resData.post.content,
+//           //creator: resData.post.creator,
+//           createdAt: resData.post.createdAt
+//         };
+//         this.setState(prevState => {
+//           let updatedPosts = [...prevState.posts];
+//           if (prevState.editPost) {
+//             const postIndex = prevState.posts.findIndex(
+//               p => p._id === prevState.editPost._id
+//             );
+//             updatedPosts[postIndex] = post;
+//           } else if (prevState.posts.length < 2) {
+//             updatedPosts = prevState.posts.concat(post);
+//           }
+//           return {
+//             posts: updatedPosts,
+//             isEditing: false,
+//             editPost: null,
+//             editLoading: false
+//           };
+//         });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         this.setState({
+//           isEditing: false,
+//           editPost: null,
+//           editLoading: false,
+//           error: err
+//         });
+//       });
+//   };
+
+//   // statusInputChangeHandler = (input, value) => {
+//   //   this.setState({ status: value });
+//   // };
+
+//   deletePostHandler = postId => {
+//     this.setState({ postsLoading: true });
+//     fetch('http://localhost:8080/feed/post/' + postId, {
+//       method: 'DELETE'
+//     })
+//       .then(res => {
+//         if (res.status !== 200 && res.status !== 201) {
+//           throw new Error('Deleting a post failed!');
+//         }
+//         return res.json();
+//       })
+//       .then(resData => {
+//         console.log(resData);
+//         this.setState(prevState => {
+//           const updatedPosts = prevState.posts.filter(p => p._id !== postId);
+//           return { posts: updatedPosts, postsLoading: false };
+//         });
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         this.setState({ postsLoading: false });
+//       });
+//   };
+
+//   errorHandler = () => {
+//     this.setState({ error: null });
+//   };
+
+//   catchError = error => {
+//     this.setState({ error: error });
+//   };
+
+  render() {
+    return (
+      <Fragment>
+        <ErrorHandler error={this.state.error} onHandle={this.errorHandler} />
+        <FeedEdit
+          editing={this.state.isEditing}
+          selectedPost={this.state.editPost}
+          loading={this.state.editLoading}
+          onCancelEdit={this.cancelEditHandler}
+          onFinishEdit={this.finishEditHandler}
+        />
+        
+        <div className="e-waste_counter">{Parser(ewaste_counter)}</div>
+        <div className="e-waste_counter">{Parser(ewaste_income)}</div>
+        
+        <h1>Lots of projects are available from recycled electronics parts </h1>
+        <p>Build a DIY Screen out of recycled parts for cheap by DIY Perks</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CfirQC99xPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      </Fragment>
+    );
+  }
+}
+
+export default Progressvideo;
