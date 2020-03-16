@@ -38,20 +38,24 @@ class Progressvideo extends Component {
         <div className="e-waste_counter">{Parser(ewaste_counter)}</div>
         <div className="e-waste_counter">{Parser(ewaste_income)}</div>
         
-        <h1 className="progress__head">Go Viral!</h1>
-        <h3 className="progress__explanation">We need your continuous attention.</h3><h3 className="progress__explanation_a"> Your continuous attention will progress our communities.</h3>
-        <div classname="progress__body">
-            <p>Build a DIY Screen out of recycled parts for cheap @ DIY Perks</p>
+        <h1 className="progress__head">Go Green!</h1>
+        <h3 className="progress__explanation">We need your continuous attention. Your continuous attention will progress our communities.</h3>
+        <div class="progress__body">
+            <p>Build a DIY Screen out of recycled parts for cheap @ <a class="deanza_link" href="https://www.youtube.com/user/DIYPerks" target="_blank">DIY Perks</a></p>
             <iframe classname="progress__body_a" width="1000" height="650" src="https://www.youtube.com/embed/CfirQC99xPc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             
-            <p>Things you can make from old, dead laptops @ DIY Perks</p>
+            <p>Things you can make from old, dead laptops @ <a class="deanza_link" href="https://www.youtube.com/user/DIYPerks" target="_blank">DIY Perks</a></p>
             <iframe classname="progress__body_a" width="1000" height="650" src="https://www.youtube.com/embed/WLP_L7Mgz6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
-            <p>Motorcycle Made Out Of Recycled Computer Parts - Diy Project @Home Projects</p>
+            <p>Motorcycle Made Out Of Recycled Computer Parts - Diy Project @ <a class="deanza_link" href="https://www.youtube.com/channel/UCTEw7d46cVpPfd-Uzg3OySA/featured" target="_blank">Home Projects</a></p>
             <iframe classname="progress__body_a" width="1000" height="650" src="https://www.youtube.com/embed/xZCpG259D7Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
 
+            <p>De Anza Computer Donation Program</p>
         </div>
+            <div class="deanza__explain">
+            <p>De Anza College accepts computer donations.<br />They fix and clean the old computers, and give to students who need computers. <br />
+              For more details, visit <a class="deanza_link" href="https://www.deanza.edu/oti/computer_donation.html" target="_blank">De Anza computer donation program</a> </p>
+            </div>
       </Fragment>
     );
   }

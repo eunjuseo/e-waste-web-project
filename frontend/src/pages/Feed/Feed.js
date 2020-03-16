@@ -8,9 +8,12 @@ import Paginator from '../../components/Paginator/Paginator';
 import Loader from '../../components/Loader/Loader';
 import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 import './Feed.css';
+import '../Progress-video/Progress-video.css';
+import image_of_bulb from './images/clear-light-bulb-planter-on-gray-rock.jpg';
 import Parser from 'html-react-parser';
 const ewaste_counter = '<iframe align="right" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/18?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>';
-const ewaste_income = '<iframe align="left" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/38?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>'
+const ewaste_income = '<iframe align="right" height=\'100\' src=\'https://www.theworldcounts.com/embed/challenges/38?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14\' style=\'border: none\' width=\'300\'></iframe>'
+
 class Feed extends Component {
   state = {
     isEditing: false,
@@ -229,16 +232,21 @@ class Feed extends Component {
             </Button>
           </form>
         </section> */}
-        <div className="e-waste_counter">{Parser(ewaste_counter)}</div>
-        <div className="e-waste_counter">{Parser(ewaste_income)}</div>
-        {/* <section className="feed__control">
-          <Button mode="raised" design="accent" onClick={this.newPostHandler}>
-            New Post
-          </Button>
-        </section> */}
+
+      
+        {/* <div className="bulb_image"> */}
+      
+        <div class="e-waste_counter">
+          {Parser(ewaste_counter)}
+          {Parser(ewaste_income)}
+        </div>
+        
         <div className="feed__title">
           <h1>Electronic Waste</h1>
         </div>
+        
+        {/* </div> */}
+
         <section className="feed">
           {this.state.postsLoading && (
             <div style={{ textAlign: 'center', marginTop: '2rem' }}>
@@ -272,7 +280,11 @@ class Feed extends Component {
           )}
         </section>
         <h1 className="feed__video_title">E-Waste in Ghana</h1>
-        <iframe width="900" height="700" src="https://www.youtube.com/embed/pr1zQrXM_7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="feed__video_content">People in Ghana work in E-waste industry for their lives. Ironically, this video has been posted in 2008 and the video below has been posted in 2019. It has been 11 years. For 11 years, they have been working under the environment that contains the most toxic air. <br /> Video from <a class="deanza_link" href="https://www.youtube.com/user/GreenpeaceVideo/" target="_blank">Greenpeace International</a></p>
+        <iframe width="1000" height="700" src="https://www.youtube.com/embed/pr1zQrXM_7s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h1 className="feed__video_title_a">The dark side of electronic waste recycling</h1>
+        <p class="feed__video_content">What has been changed? There are some changes. A lot of companies come up with sustainable solutions for E-waste. WHO announced the danger of E-waste. However, E-waste is still here in our world and still considering as problematic.<br />Video from <a class="deanza_link" href="https://www.youtube.com/channel/UCtxJFU9DgUhfr2J2bveCHkQ" target="_blank">Verge Science</a></p>
+        <iframe width="1000" height="700" src="https://www.youtube.com/embed/vufLW4xOsS4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </Fragment>
     );
   }

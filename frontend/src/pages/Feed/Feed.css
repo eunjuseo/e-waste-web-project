@@ -1,3 +1,10 @@
+.bulb_image{
+  background-image: url(images/clear-light-bulb-planter-on-gray-rock.jpg);
+  height:50%;
+  background-size:cover;
+ 
+}
+
 .feed__status {
   width: 90%;
   margin: 1rem auto;
@@ -21,24 +28,37 @@
   height: 7rem;
 }
 .ewaste_counter{
+  padding-top: 10%;
   align-items: center;
   
 }
-.background__image{
-  background-image: url(./images/clear-light-bulb-planter-on-gray-rock.jpg);
-}
+
 
 .feed__title{
-  align-items: center;
-  padding-left: 30%;
-  font-size: 2rem;
+  align-items: left;
+  padding-left: 5%;
+  font-size: 2.5rem;
   color: #182b10;
 }
 .feed__video_title{
   font-size: 3rem;
-  margin: 0rem 0rem 6rem 2rem;
+  margin: 0rem 0rem 4rem 2rem;
   color: #182b10;
 }
+
+.feed__video_title_a{
+  font-size: 3rem;
+  margin: 6rem 0rem 4rem 2rem;
+  color: #182b10;
+}
+.feed__video_content{
+  font-size: 150%;
+  text-align: justify;
+  margin : 4rem 8rem 4rem 8rem;
+  line-height: 3rem;
+  padding-left: 2rem;
+}
+
 @media (min-width: 768px) {
   .feed__status {
     width: 30rem;
